@@ -20,7 +20,7 @@ public class SearchByKeywordStory {
 
     @Steps
     public EndUserSteps anna;
-
+String lalala;
     @Issue("#WIKI-1")
     @Test
     public void searching_by_keyword_apple_should_display_the_corresponding_article() {
