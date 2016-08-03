@@ -10,20 +10,7 @@ import com.tools.AbstractPage;
 
 public class ViewPoliciesPage extends AbstractPage {
 
-	private String policiesItem = "nav[class*='menu'] a";
 
-	public void clickOnMenuItem(String elementText) {
-		List<WebElement> elementsList = getDriver().findElements(By.cssSelector(policiesItem));
-		for (WebElement e : elementsList) {
-			System.out.println("menu item : " + e.getText());
-			if (e.getText().contentEquals(elementText)) {
-				e.click();
-
-				break;
-			}
-		}
-	}
-	
 	public void policiesTitleAssertion(String policies) {
 		WebElement policiesTitle = getDriver().findElement(By.cssSelector("#root > div  header > span:nth-child(2)"));
 		Assert.assertTrue(policiesTitle.getText().contentEquals(policies));

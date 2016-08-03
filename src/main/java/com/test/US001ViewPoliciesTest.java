@@ -26,7 +26,7 @@ public class US001ViewPoliciesTest {
 	public Pages pages;
 
 	@Steps
-	public ViewPoliciesSteps viewPoliciesPage;
+	public ViewPoliciesSteps viewPoliciesSteps;
 	@Steps
 	public LogInSteps logInSteps;
 
@@ -55,9 +55,9 @@ public class US001ViewPoliciesTest {
 		logInSteps.inputUserPass(pass);
 		logInSteps.clickLoginButton();
 
-		viewPoliciesPage.clickOnMenuItem(policiesItem);
-		viewPoliciesPage.policiesTitleAssertion(policiesText);
-		viewPoliciesPage.listAllPolicies(strings);
+		viewPoliciesSteps.clickOnMenuItem(policiesItem);
+		viewPoliciesSteps.policiesTitleAssertion(policiesText);
+		viewPoliciesSteps.listAllPolicies(strings);
 
 	}
 }
