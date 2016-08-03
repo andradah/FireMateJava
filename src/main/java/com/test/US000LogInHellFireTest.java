@@ -3,9 +3,7 @@ package com.test;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-
-import com.hellfire.LoginSteps;
-
+import com.hellfire.LogInSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
@@ -21,7 +19,7 @@ public class US000LogInHellFireTest {
 	public Pages pages;
 
 	@Steps
-	public LoginSteps loginSteps;
+	public LogInSteps logInSteps;
 
 	String url = "http://172.22.140.89:8014/login";
 	String username = "admin";
@@ -29,9 +27,9 @@ public class US000LogInHellFireTest {
 
 	@Test
 	public void LoginHellFire() {
-		loginSteps.openHellFirePage(url);
-		loginSteps.inputUserName(username);
-		loginSteps.inputUserPass(pass);
-		loginSteps.clickLoginButton();
+		logInSteps.openHellFirePage(url);
+		logInSteps.inputUserName(username);
+		logInSteps.inputUserPass(pass);
+		logInSteps.clickLoginButton();
 	}
 }

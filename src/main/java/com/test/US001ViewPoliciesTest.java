@@ -1,10 +1,15 @@
 package com.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.hellfire.LoginSteps;
+import com.hellfire.LogInSteps;
+import com.hellfire.ViewPoliciesSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -21,17 +26,38 @@ public class US001ViewPoliciesTest {
 	public Pages pages;
 
 	@Steps
-	public LoginSteps loginSteps;
+	public ViewPoliciesSteps viewPoliciesPage;
+	@Steps
+	public LogInSteps logInSteps;
 
 	String url = "http://172.22.140.89:8014/login";
-	String policiesItem = "Policies";
-	String policiesText = "Policies";
+	String username = "admin";
+	String pass = "admin";
+
+	String policiesItem;
+	String policiesText;
+	List<String> strings = new ArrayList<String>();
+
+	@Before
+	public void dataSetup() {
+		policiesItem = "Policies";
+		policiesText = "Policies";
+		
+		strings.add("Workspace11");
+		strings.add("Workspace12");
+		strings.add("Workspace8");
+	}
 
 	@Test
 	public void policiesMenuItem() {
-		loginSteps.openHellFirePage(url);
-		loginSteps.clickOnMenuItem(policiesItem);
-		loginSteps.policiesTitleAssertion(policiesText);
-		
+		logInSteps.openHellFirePage(url);
+		logInSteps.inputUserName(username);
+		logInSteps.inputUserPass(pass);
+		logInSteps.clickLoginButton();
+
+		viewPoliciesPage.clickOnMenuItem(policiesItem);
+		viewPoliciesPage.policiesTitleAssertion(policiesText);
+		viewPoliciesPage.listAllPolicies(strings);
+
 	}
 }
