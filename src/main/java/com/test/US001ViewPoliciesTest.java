@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.hellfire.LogInSteps;
-import com.hellfire.ViewPoliciesSteps;
+import com.hellfire.policies.steps.ViewPoliciesSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
