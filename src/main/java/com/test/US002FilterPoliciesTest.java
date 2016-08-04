@@ -29,20 +29,22 @@ public class US002FilterPoliciesTest {
 	public ViewPoliciesSteps viewPoliciesSteps;
 	@Steps
 	public LogInSteps logInSteps;
-	@Steps 
+	@Steps
 	FiltersSteps filtersSteps;
 
 	String url = "http://172.22.140.89:8014/login";
 	String username = "admin";
 	String pass = "admin";
-	
-	
 
 	String policiesItem;
 	String policiesText;
 	List<String> policiesFilterTypes = new ArrayList<String>();
 	String allCheckbox;
-	
+	String nameSort;
+	List<String> listOrder = new ArrayList<String>();
+	List<String> listOrder2 = new ArrayList<String>();
+	String typeSort;
+
 	@Before
 	public void dataSetup() {
 		policiesItem = "Policies";
@@ -61,21 +63,42 @@ public class US002FilterPoliciesTest {
 		policiesFilterTypes.add("Workspace11");
 		policiesFilterTypes.add("Workspace12");
 		allCheckbox = "All";
+		nameSort = "Name";
+		typeSort = "Type";
+
+		listOrder.add("Workspace8");
+		listOrder.add("Workspace11");
+		listOrder.add("Workspace12");
+
+		listOrder2.add("Workspace12");
+		listOrder2.add("Workspace11");
+		listOrder2.add("Workspace8");
+
 	}
-		@Test
-		public void filterPoliciesTest(){
+
+	@Test
+	public void filterPoliciesTest() {
 		logInSteps.openHellFirePage(url);
 		logInSteps.inputUserName(username);
 		logInSteps.inputUserPass(pass);
 		logInSteps.clickLoginButton();
-		
+
 		viewPoliciesSteps.clickOnMenuItem(policiesItem);
 		filtersSteps.clickOnPolicyFilterTypeButton();
 		filtersSteps.clickOnPoliciesFilterListType(policiesFilterTypes);
 		filtersSteps.clickToCheckAllPolicyTypeCheckbox(allCheckbox);
-		
-		
-		
-		
-}
+		filtersSteps.clickOnNameInSortDropDownMenu(nameSort);
+		filtersSteps.clickOnPoliciesFilterListType(policiesFilterTypes);
+		filtersSteps.clickToCheckAllPolicyTypeCheckbox(allCheckbox);
+		filtersSteps.clickOnDownArrowToSort();
+		filtersSteps.verifyNameListIsOrderedAsc();
+		filtersSteps.clickOnUpArrowToSort();
+		filtersSteps.verifyNameListIsOrderedDesc();
+		filtersSteps.clickOnTypeInSortDropDownMenu(typeSort);
+		filtersSteps.clickOnDownArrowToSort();
+		filtersSteps.verifyTypeListIsOrderedAscType(listOrder);
+		filtersSteps.clickOnUpArrowToSort();
+		filtersSteps.verifyTypeListIsOrderedDescType(listOrder2);
+
+	}
 }
