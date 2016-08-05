@@ -1,6 +1,6 @@
-package com.hellfire.navigation.steps;
+package com.hellfire.steps.navigation;
 
-import com.hellfire.navigation.pages.NavigationMenuPage;
+import com.hellfire.pages.navigation.NavigationMenuPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;

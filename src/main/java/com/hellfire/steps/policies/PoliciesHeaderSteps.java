@@ -1,4 +1,4 @@
-package com.hellfire.policies.steps;
+package com.hellfire.steps.policies;
 
 import com.tools.AbstractPage;
 

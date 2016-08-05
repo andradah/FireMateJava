@@ -1,17 +1,19 @@
-package com.hellfire;
+package com.hellfire.steps;
+
+import com.hellfire.pages.LogInPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-@SuppressWarnings("serial")
 public class LogInSteps extends ScenarioSteps {
 
+	private static final long serialVersionUID = 7027720591674290320L;
 	LogInPage logInPage;
 
 	@Step
 	public void openHellFirePage(String url) {
-		logInPage.getDriver().manage().window().maximize();
 		logInPage.getDriver().get(url);
+		getDriver().manage().window().maximize();
 	}
 
 	@Step

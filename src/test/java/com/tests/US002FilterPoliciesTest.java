@@ -1,4 +1,4 @@
-package com.test;
+package com.tests;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,29 +8,27 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.hellfire.LogInSteps;
-import com.hellfire.policies.steps.FiltersSteps;
-import com.hellfire.policies.steps.ViewPoliciesSteps;
+import com.hellfire.steps.LogInSteps;
+import com.hellfire.steps.policies.FiltersSteps;
+import com.hellfire.steps.policies.ViewPoliciesSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.pages.Pages;
 
 @RunWith(SerenityRunner.class)
 public class US002FilterPoliciesTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
-	@ManagedPages()
-	public Pages pages;
+//	@ManagedPages()
+//	public Pages pages;
 
 	@Steps
 	public ViewPoliciesSteps viewPoliciesSteps;
 	@Steps
 	public LogInSteps logInSteps;
 	@Steps
-	FiltersSteps filtersSteps;
+	public FiltersSteps filtersSteps;
 
 	String url = "http://172.22.140.89:8014/login";
 	String username = "admin";
@@ -69,7 +67,7 @@ public class US002FilterPoliciesTest {
 	}
 
 	@Test
-	public void filterPoliciesTest() {
+	public void us002FilterPoliciesTest() {
 		logInSteps.openHellFirePage(url);
 		logInSteps.inputUserName(username);
 		logInSteps.inputUserPass(pass);

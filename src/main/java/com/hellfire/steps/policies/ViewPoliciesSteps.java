@@ -1,9 +1,9 @@
-package com.hellfire.policies.steps;
+package com.hellfire.steps.policies;
 
 import java.util.List;
 
-import com.hellfire.navigation.pages.NavigationMenuPage;
-import com.hellfire.policies.pages.ViewPoliciesPage;
+import com.hellfire.pages.navigation.NavigationMenuPage;
+import com.hellfire.pages.policies.ViewPoliciesPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;

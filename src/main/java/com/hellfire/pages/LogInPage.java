@@ -1,4 +1,4 @@
-package com.hellfire;
+package com.hellfire.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

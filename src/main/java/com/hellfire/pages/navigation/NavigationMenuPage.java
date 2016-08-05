@@ -1,4 +1,4 @@
-package com.hellfire.navigation.pages;
+package com.hellfire.pages.navigation;
 
 import java.util.List;
 
