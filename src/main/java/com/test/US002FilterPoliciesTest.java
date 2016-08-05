@@ -50,29 +50,21 @@ public class US002FilterPoliciesTest {
 		policiesItem = "Policies";
 		policiesText = "Policies";
 		policiesFilterTypes.add("All");
-		policiesFilterTypes.add("Workspace1");
-		policiesFilterTypes.add("Workspace2");
-		policiesFilterTypes.add("Workspace3");
-		policiesFilterTypes.add("Workspace4");
-		policiesFilterTypes.add("Workspace5");
-		policiesFilterTypes.add("Workspace6");
-		policiesFilterTypes.add("Workspace7");
-		policiesFilterTypes.add("Workspace8");
-		policiesFilterTypes.add("Workspace9");
-		policiesFilterTypes.add("Workspace10");
-		policiesFilterTypes.add("Workspace11");
-		policiesFilterTypes.add("Workspace12");
+		policiesFilterTypes.add("Type1");
+		policiesFilterTypes.add("Type2");
+		policiesFilterTypes.add("Type3");
+		
 		allCheckbox = "All";
 		nameSort = "Name";
 		typeSort = "Type";
 
-		listOrder.add("Workspace8");
-		listOrder.add("Workspace11");
-		listOrder.add("Workspace12");
+		listOrder.add("Type1");
+		listOrder.add("Type2");
+		listOrder.add("Type3");
 
-		listOrder2.add("Workspace12");
-		listOrder2.add("Workspace11");
-		listOrder2.add("Workspace8");
+		listOrder2.add("Type3");
+		listOrder2.add("Type2");
+		listOrder2.add("Type1");
 
 	}
 
@@ -85,6 +77,7 @@ public class US002FilterPoliciesTest {
 
 		viewPoliciesSteps.clickOnMenuItem(policiesItem);
 		filtersSteps.clickOnPolicyFilterTypeButton();
+		
 		filtersSteps.clickOnPoliciesFilterListType(policiesFilterTypes);
 		filtersSteps.clickToCheckAllPolicyTypeCheckbox(allCheckbox);
 		filtersSteps.clickOnNameInSortDropDownMenu(nameSort);
@@ -96,9 +89,9 @@ public class US002FilterPoliciesTest {
 		filtersSteps.verifyNameListIsOrderedDesc();
 		filtersSteps.clickOnTypeInSortDropDownMenu(typeSort);
 		filtersSteps.clickOnDownArrowToSort();
-		filtersSteps.verifyTypeListIsOrderedAscType(listOrder);
+		filtersSteps.verifyTypeListIsOrderedAsc(listOrder);
 		filtersSteps.clickOnUpArrowToSort();
-		filtersSteps.verifyTypeListIsOrderedDescType(listOrder2);
+		filtersSteps.verifyTypeListIsOrderedDesc(listOrder2);
 
 	}
 }

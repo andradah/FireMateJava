@@ -22,7 +22,7 @@ public class FiltersSteps extends ScenarioSteps {
 
 	@Step
 	public void clickOnPoliciesFilterListType(List<String> strings) {
-		filtersPage.policiesFilterListType(strings);
+		filtersPage.clickOnPoliciesFilterListType(strings);
 	}
 
 	@Step
@@ -61,13 +61,13 @@ public class FiltersSteps extends ScenarioSteps {
 	}
 
 	@Step
-	public void verifyTypeListIsOrderedAscType(List<String> listOrder) {
-		filtersPage.verifyTypeListIsOrderedAscType(listOrder);
+	public void verifyTypeListIsOrderedAsc(List<String> listOrder) {
+		filtersPage.verifyTypeListIsOrderedAsc(listOrder);
 	}
 
 	@Step
-	public void verifyTypeListIsOrderedDescType(List<String> listOrder2) {
-		filtersPage.verifyTypeListIsOrderedDescType(listOrder2);
+	public void verifyTypeListIsOrderedDesc(List<String> listOrder2) {
+		filtersPage.verifyTypeListIsOrderedDesc(listOrder2);
 	}
 
 	// @Step

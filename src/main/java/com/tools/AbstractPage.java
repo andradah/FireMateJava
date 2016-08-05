@@ -15,8 +15,8 @@ public class AbstractPage extends PageObject{
 		}
 		if (ascDesc.contentEquals("ASC")) {
 			for (int i = 1; i < list.size(); i++) {
-				// System.out.println("current: " + stringsList.get(i));
-				// System.out.println("previous: " + stringsList.get(i - 1));
+				 System.out.println("current: " + stringsList.get(i));
+				 System.out.println("previous: " + stringsList.get(i - 1));
 				if (stringsList.get(i - 1).compareToIgnoreCase(stringsList.get(i)) > 0) {
 					return false;
 				}
@@ -25,6 +25,8 @@ public class AbstractPage extends PageObject{
 		}
 		if (ascDesc.contentEquals("DESC")) {
 			for (int i = 1; i < list.size(); i++) {
+				System.out.println("current: " + stringsList.get(i));
+				 System.out.println("previous: " + stringsList.get(i - 1));
 				if (stringsList.get(i - 1).compareToIgnoreCase(stringsList.get(i)) < 0) {
 					return false;
 				}
@@ -34,8 +36,8 @@ public class AbstractPage extends PageObject{
 		return false;
 }
 
-	public void navigateTo(String URL) {
-		getDriver().get(URL);
-	}
-	
+//	public void navigateTo(String URL) {
+//		getDriver().get(URL);
+//	}
+//	
 }

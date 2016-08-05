@@ -14,8 +14,9 @@ public class FiltersPage extends AbstractPage {
 		filterTypeButton.click();
 	}
 
-	public void policiesFilterListType(List<String> strings) {
-		List<WebElement> elementsList = getDriver().findElements(By.cssSelector("div[class$= 'small' ] label"));
+	public void clickOnPoliciesFilterListType(List<String> strings) {
+		List<WebElement> elementsList = getDriver()
+				.findElements(By.cssSelector("label[class*= 'grommetux-check-box']"));
 		for (String s : strings) {
 			boolean found = false;
 			for (WebElement e : elementsList) {
@@ -32,7 +33,8 @@ public class FiltersPage extends AbstractPage {
 	}
 
 	public void clickToCheckAllPolicyTypeCheckbox(String allCheckbox) {
-		List<WebElement> elementsList = getDriver().findElements(By.cssSelector("div[class$= 'small' ] label"));
+		List<WebElement> elementsList = getDriver()
+				.findElements(By.cssSelector("label[class*= 'grommetux-check-box']"));
 		for (WebElement e : elementsList) {
 			System.out.println("element text: " + e.getText());
 			if (e.getText().contentEquals(allCheckbox)) {
@@ -64,10 +66,18 @@ public class FiltersPage extends AbstractPage {
 		waitABit(2000);
 	}
 
-	public void verifyNameListIsOrderedDesc() {
+	public void verifyNameListIsOrderedAsc() {
 		List<WebElement> elemlist = getDriver().findElements(By.cssSelector("div[class*='grommetux-tile'] div strong"));
-		Assert.assertTrue(areItemsSortedAlphabetically("items were not sorted descendent", elemlist, "DESC"));
-
+		boolean found = false;
+		for (WebElement e : elemlist) {
+			System.out.println("nameListOrder: " + e.getText());
+			if (e.getText().equals(elemlist)) {
+				Assert.assertTrue("text: " + e + " was not found in list", found);
+				System.out.println();
+			}
+		}
+		// Assert.assertTrue(areItemsSortedAlphabetically("items were not sorted
+		// descendent", elemlist, "ASC"));
 	}
 
 	public void clickOnUpArrow() {
@@ -76,9 +86,19 @@ public class FiltersPage extends AbstractPage {
 		waitABit(2000);
 	}
 
-	public void verifyNameListIsOrderedAsc() {
+	public void verifyNameListIsOrderedDesc() {
 		List<WebElement> elemlist = getDriver().findElements(By.cssSelector("div[class*='grommetux-tile'] div strong"));
-		Assert.assertTrue(areItemsSortedAlphabetically("items were not sorted descendent", elemlist, "ASC"));
+		boolean found = false;
+		for (WebElement e : elemlist) {
+			System.out.println("nameListOrder: " + e.getText());
+			if (e.getText().equals(elemlist)) {
+				Assert.assertTrue("text: " + e + " was not found in list", found);
+				System.out.println();
+			}
+		}
+		// Assert.assertTrue(areItemsSortedAlphabetically("items were not sorted
+		// descendent", elemlist, "DESC"));
+
 	}
 
 	public void clickOnTypeInSortDropDownMenu(String nameSort) {
@@ -93,24 +113,34 @@ public class FiltersPage extends AbstractPage {
 		}
 	}
 
-	public void verifyTypeListIsOrderedAscType(List<String> listOrder) {
+	public void verifyTypeListIsOrderedAsc(List<String> listOrder) {
 		List<WebElement> elementsList = getDriver()
 				.findElements(By.cssSelector("header[class*='grommetux-box'] label"));
 		for (WebElement e : elementsList) {
-			System.out.println("element text: " + e.getText());
+			System.out.println("Type list asc: " + e.getText());
 		}
-		Assert.assertTrue(listOrder.equals(elementsList));
-		return;
+		if (listOrder.size() == elementsList.size()) {
+			for (int i = 0; i < listOrder.size(); i++) {
+				if (!listOrder.get(i).equals(elementsList.get(i))) {
+					return;
+				}
 
+			}
+		}
 	}
 
-	public void verifyTypeListIsOrderedDescType(List<String> listOrder2) {
-		List<WebElement> elementsList = getDriver()
-				.findElements(By.cssSelector("header[class*='grommetux-box'] label"));
+	public void verifyTypeListIsOrderedDesc(List<String> listOrder2) {
+		List<WebElement> elementsList = getDriver().findElements(By.cssSelector("header[class*='grommetux-box'] label"));
 		for (WebElement e : elementsList) {
-			System.out.println("element text: " + e.getText());
+			System.out.println("Type list desc: " + e.getText());
 		}
-		Assert.assertTrue(listOrder2.equals(elementsList));
-		return;
+		if (listOrder2.size() == elementsList.size()){
+			for (int i=0; i<listOrder2.size(); i++){
+				if (!listOrder2.get(i).equals(elementsList.get(i))){
+					return;
+				}
+				
+			}
+	}
 	}
 }
