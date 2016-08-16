@@ -48,21 +48,21 @@ public class US002FilterPoliciesTest {
 		policiesItem = "Policies";
 		policiesText = "Policies";
 		policiesFilterTypes.add("All");
-		policiesFilterTypes.add("Type1");
-		policiesFilterTypes.add("Type2");
-		policiesFilterTypes.add("Type3");
+		policiesFilterTypes.add("PolicyType1");
+		policiesFilterTypes.add("PolicyType2");
+		policiesFilterTypes.add("PolicyType3");
 		
 		allCheckbox = "All";
 		nameSort = "Name";
 		typeSort = "Type";
 
-		listOrder.add("Type1");
-		listOrder.add("Type2");
-		listOrder.add("Type3");
+		listOrder.add("PolicyType1");
+		listOrder.add("PolicyType2");
+		listOrder.add("PolicyType3");
 
-		listOrder2.add("Type3");
-		listOrder2.add("Type2");
-		listOrder2.add("Type1");
+		listOrder2.add("PolicyType3");
+		listOrder2.add("PolicyType2");
+		listOrder2.add("PolicyType1");
 
 	}
 
