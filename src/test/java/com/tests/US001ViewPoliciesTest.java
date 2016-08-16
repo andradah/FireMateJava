@@ -43,9 +43,9 @@ public class US001ViewPoliciesTest {
 		policiesItem = "Policies";
 		policiesText = "Policies";
 		
-		strings.add("Type1");
-		strings.add("Type2");
-		strings.add("Type3");
+		strings.add("PolicyType1");
+		strings.add("PolicyType2");
+		strings.add("PolicyType3");
 	}
 
 	@Test
